@@ -1,0 +1,33 @@
+html,body {
+    height:100%;
+  }
+  
+  h1 {
+    font-family: "Leckerli One";
+    font-size:80px;
+    color: id="#355afd";
+  }
+  
+  .lead {
+      color:#355afd;
+  }
+  
+  
+  /* Custom container */
+  .container-full {
+    margin: 0 auto;
+    width: 100%;
+    min-height:100%;
+    background-color:#fdd835;
+    color:#355afd;
+    overflow:hidden;
+  }
+  
+  .container-full a {
+    color:#355afd;
+    text-decoration:none;
+  }
+  
+  .v-center {
+    margin-top:7%;
+  }
