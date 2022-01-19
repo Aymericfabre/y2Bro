@@ -22,26 +22,25 @@ def index():
     
         video = YouTube(
                     url,
-                    use_oauth=True,
-                    allow_oauth_cache=True
+                    use_oauth=False
         )
 
         Title = video.title
-#         Thumbnail = video.thumbnail_url
-#         Duration = time.strftime('%H:%M:%S', time.gmtime(video.length))
-#         session["Title"] = Title
-#         session["Thumbnail"] = Thumbnail
-#         session["Duration"] = Duration
+        Thumbnail = video.thumbnail_url
+        Duration = time.strftime('%H:%M:%S', time.gmtime(video.length))
+        session["Title"] = Title
+        session["Thumbnail"] = Thumbnail
+        session["Duration"] = Duration
 
         
 
-#         streams = set()
-#         for stream in video.streams.filter(type="video"):
-#             streams.add(stream.resolution)
-#         streams = sorted(streams, key=lambda Res: int(Res[:-1]), reverse=True)
-#         session["streams"] = streams
+        streams = set()
+        for stream in video.streams.filter(type="video"):
+            streams.add(stream.resolution)
+        streams = sorted(streams, key=lambda Res: int(Res[:-1]), reverse=True)
+        session["streams"] = streams
 
-#         return redirect(url_for('.videoinfo', Title=Title, Thumbnail=Thumbnail, Duration=Duration, streams=streams, **request.args))
+        return redirect(url_for('.videoinfo', Title=Title, Thumbnail=Thumbnail, Duration=Duration, streams=streams, **request.args))
 
     else:
         return render_template("index.html")
