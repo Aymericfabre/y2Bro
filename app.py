@@ -26,7 +26,7 @@ def index():
                     allow_oauth_cache=True
         )
 
-#         Title = video.title
+        Title = video.title
 #         Thumbnail = video.thumbnail_url
 #         Duration = time.strftime('%H:%M:%S', time.gmtime(video.length))
 #         session["Title"] = Title
